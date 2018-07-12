@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Проверьте значения атрибутов сборки
 
-<Assembly: AssemblyTitle("Eutektika")>
+<Assembly: AssemblyTitle("Eutectic")>
 <Assembly: AssemblyDescription("Расчет тройной эвтектики")>
 <Assembly: AssemblyCompany("chefranov.name")>
 <Assembly: AssemblyProduct("Eutektika")>

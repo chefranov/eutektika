@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Eutektika123
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,14 @@ Partial Class Form1
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
     'Для ее изменения используйте конструктор форм Windows Form.  
     'Не изменяйте ее в редакторе исходного кода.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eutektika123))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ФайлToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.НовыйФайлToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ЗагрузитьДанныеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.СохранитьДанныеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ВыходИзПрограммыToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ОПрограммеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.name1 = New System.Windows.Forms.TextBox()
@@ -43,10 +46,8 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.temp1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -92,10 +93,19 @@ Partial Class Form1
         Me.name2_answer = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -103,21 +113,47 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ФайлToolStripMenuItem, Me.ОПрограммеToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(789, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(803, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ФайлToolStripMenuItem
         '
-        Me.ФайлToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ВыходИзПрограммыToolStripMenuItem})
+        Me.ФайлToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.НовыйФайлToolStripMenuItem, Me.ЗагрузитьДанныеToolStripMenuItem, Me.СохранитьДанныеToolStripMenuItem, Me.ВыходИзПрограммыToolStripMenuItem})
         Me.ФайлToolStripMenuItem.Name = "ФайлToolStripMenuItem"
         Me.ФайлToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ФайлToolStripMenuItem.Text = "Файл"
         '
+        'НовыйФайлToolStripMenuItem
+        '
+        Me.НовыйФайлToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources._new
+        Me.НовыйФайлToolStripMenuItem.Name = "НовыйФайлToolStripMenuItem"
+        Me.НовыйФайлToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.НовыйФайлToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.НовыйФайлToolStripMenuItem.Text = "Новый файл"
+        '
+        'ЗагрузитьДанныеToolStripMenuItem
+        '
+        Me.ЗагрузитьДанныеToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.folder
+        Me.ЗагрузитьДанныеToolStripMenuItem.Name = "ЗагрузитьДанныеToolStripMenuItem"
+        Me.ЗагрузитьДанныеToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.ЗагрузитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.ЗагрузитьДанныеToolStripMenuItem.Text = "Загрузить данные..."
+        '
+        'СохранитьДанныеToolStripMenuItem
+        '
+        Me.СохранитьДанныеToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.save
+        Me.СохранитьДанныеToolStripMenuItem.Name = "СохранитьДанныеToolStripMenuItem"
+        Me.СохранитьДанныеToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.СохранитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.СохранитьДанныеToolStripMenuItem.Text = "Сохранить данные..."
+        '
         'ВыходИзПрограммыToolStripMenuItem
         '
+        Me.ВыходИзПрограммыToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.close
         Me.ВыходИзПрограммыToolStripMenuItem.Name = "ВыходИзПрограммыToolStripMenuItem"
-        Me.ВыходИзПрограммыToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
+        Me.ВыходИзПрограммыToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Q), System.Windows.Forms.Keys)
+        Me.ВыходИзПрограммыToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.ВыходИзПрограммыToolStripMenuItem.Text = "Выход из программы"
         '
         'ОПрограммеToolStripMenuItem
@@ -128,7 +164,7 @@ Partial Class Form1
         '
         'name1
         '
-        Me.name1.Location = New System.Drawing.Point(31, 48)
+        Me.name1.Location = New System.Drawing.Point(31, 45)
         Me.name1.MaxLength = 15
         Me.name1.Name = "name1"
         Me.name1.Size = New System.Drawing.Size(134, 20)
@@ -139,7 +175,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 30)
+        Me.Label1.Location = New System.Drawing.Point(31, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(118, 13)
         Me.Label1.TabIndex = 2
@@ -172,7 +208,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(9, 103)
+        Me.Label9.Location = New System.Drawing.Point(9, 100)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 13)
         Me.Label9.TabIndex = 21
@@ -180,27 +216,27 @@ Partial Class Form1
         '
         'atoms3
         '
-        Me.atoms3.Location = New System.Drawing.Point(306, 100)
+        Me.atoms3.Location = New System.Drawing.Point(306, 97)
         Me.atoms3.MaxLength = 5
         Me.atoms3.Name = "atoms3"
         Me.atoms3.Size = New System.Drawing.Size(79, 20)
         Me.atoms3.TabIndex = 19
-        Me.atoms3.Text = "32"
+        Me.atoms3.Text = "10"
         Me.atoms3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'temp3
         '
-        Me.temp3.Location = New System.Drawing.Point(184, 100)
+        Me.temp3.Location = New System.Drawing.Point(184, 97)
         Me.temp3.MaxLength = 5
         Me.temp3.Name = "temp3"
         Me.temp3.Size = New System.Drawing.Size(102, 20)
         Me.temp3.TabIndex = 17
-        Me.temp3.Text = "2303"
+        Me.temp3.Text = "1000"
         Me.temp3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'name3
         '
-        Me.name3.Location = New System.Drawing.Point(31, 100)
+        Me.name3.Location = New System.Drawing.Point(31, 97)
         Me.name3.MaxLength = 15
         Me.name3.Name = "name3"
         Me.name3.Size = New System.Drawing.Size(134, 20)
@@ -211,7 +247,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 77)
+        Me.Label5.Location = New System.Drawing.Point(9, 74)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(16, 13)
         Me.Label5.TabIndex = 14
@@ -219,27 +255,27 @@ Partial Class Form1
         '
         'atoms2
         '
-        Me.atoms2.Location = New System.Drawing.Point(306, 74)
+        Me.atoms2.Location = New System.Drawing.Point(306, 71)
         Me.atoms2.MaxLength = 5
         Me.atoms2.Name = "atoms2"
         Me.atoms2.Size = New System.Drawing.Size(79, 20)
         Me.atoms2.TabIndex = 12
-        Me.atoms2.Text = "32"
+        Me.atoms2.Text = "10"
         Me.atoms2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'temp2
         '
-        Me.temp2.Location = New System.Drawing.Point(184, 74)
+        Me.temp2.Location = New System.Drawing.Point(184, 71)
         Me.temp2.MaxLength = 5
         Me.temp2.Name = "temp2"
         Me.temp2.Size = New System.Drawing.Size(102, 20)
         Me.temp2.TabIndex = 10
-        Me.temp2.Text = "2233"
+        Me.temp2.Text = "1000"
         Me.temp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'name2
         '
-        Me.name2.Location = New System.Drawing.Point(31, 74)
+        Me.name2.Location = New System.Drawing.Point(31, 71)
         Me.name2.MaxLength = 15
         Me.name2.Name = "name2"
         Me.name2.Size = New System.Drawing.Size(134, 20)
@@ -250,7 +286,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 51)
+        Me.Label4.Location = New System.Drawing.Point(9, 48)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(16, 13)
         Me.Label4.TabIndex = 7
@@ -258,18 +294,18 @@ Partial Class Form1
         '
         'atoms1
         '
-        Me.atoms1.Location = New System.Drawing.Point(306, 48)
+        Me.atoms1.Location = New System.Drawing.Point(306, 45)
         Me.atoms1.MaxLength = 5
         Me.atoms1.Name = "atoms1"
         Me.atoms1.Size = New System.Drawing.Size(79, 20)
         Me.atoms1.TabIndex = 5
-        Me.atoms1.Text = "32"
+        Me.atoms1.Text = "10"
         Me.atoms1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(306, 30)
+        Me.Label3.Location = New System.Drawing.Point(306, 27)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 6
@@ -277,45 +313,34 @@ Partial Class Form1
         '
         'temp1
         '
-        Me.temp1.Location = New System.Drawing.Point(184, 48)
+        Me.temp1.Location = New System.Drawing.Point(184, 45)
         Me.temp1.MaxLength = 5
         Me.temp1.Name = "temp1"
         Me.temp1.Size = New System.Drawing.Size(102, 20)
         Me.temp1.TabIndex = 3
-        Me.temp1.Text = "2188"
+        Me.temp1.Text = "1000"
         Me.temp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(181, 30)
+        Me.Label2.Location = New System.Drawing.Point(181, 27)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(105, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Тпл. соединения, К"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(426, 33)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(350, 350)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(623, 390)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(153, 31)
+        Me.Button1.Size = New System.Drawing.Size(168, 31)
         Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Расчитать"
+        Me.Button1.Text = "Рассчитать"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Label33)
         Me.GroupBox2.Controls.Add(Me.Label30)
         Me.GroupBox2.Controls.Add(Me.Label31)
@@ -365,15 +390,6 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Подробный расчёт"
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(12, 220)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(166, 23)
-        Me.Button3.TabIndex = 43
-        Me.Button3.Text = "Очистить форму"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label33
         '
@@ -770,31 +786,108 @@ Partial Class Form1
         Me.Button2.Text = "Сохранить график..."
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Form1
+        'CheckBox1
         '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(24, 21)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox1.TabIndex = 8
+        Me.CheckBox1.Text = "Температура"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Checked = True
+        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox2.Location = New System.Drawing.Point(122, 21)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(56, 17)
+        Me.CheckBox2.TabIndex = 9
+        Me.CheckBox2.Text = "Точки"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.CheckBox4)
+        Me.GroupBox3.Controls.Add(Me.CheckBox3)
+        Me.GroupBox3.Controls.Add(Me.CheckBox1)
+        Me.GroupBox3.Controls.Add(Me.CheckBox2)
+        Me.GroupBox3.Location = New System.Drawing.Point(426, 334)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(365, 50)
+        Me.GroupBox3.TabIndex = 10
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Настройки графика"
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(277, 21)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(69, 17)
+        Me.CheckBox4.TabIndex = 11
+        Me.CheckBox4.Text = "Заливка"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Location = New System.Drawing.Point(184, 21)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(87, 17)
+        Me.CheckBox3.TabIndex = 10
+        Me.CheckBox3.Text = "Соединения"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(426, 33)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(365, 292)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
+        'Eutektika123
+        '
+        Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(789, 436)
+        Me.ClientSize = New System.Drawing.Size(803, 436)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "Eutektika123"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Эвтектика в трехкомпонентных системах"
+        Me.Text = "Eutectic - температура и состав эвтектики в трехкомпонентных системах"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -867,6 +960,15 @@ Partial Class Form1
     Friend WithEvents Label23 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents Button3 As Button
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents ЗагрузитьДанныеToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents СохранитьДанныеToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents НовыйФайлToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents SaveFileDialog2 As SaveFileDialog
 End Class
