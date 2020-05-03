@@ -8,7 +8,7 @@ Public Class about
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        System.Diagnostics.Process.Start("http://chefranov.name")
+        System.Diagnostics.Process.Start("https://chefranov.name")
     End Sub
 
 End Class

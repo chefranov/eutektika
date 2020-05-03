@@ -41,7 +41,7 @@ Partial Class about
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(282, 21)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Eutectic 1.1"
+        Me.Label1.Text = "Eutectic 1.3"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
@@ -87,8 +87,8 @@ Partial Class about
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(259, 57)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Программа для расчёта температуры и состава эвтектики в трёхкомпонентной системе " &
-    "и температуры и состава эвтектик, входящих в неё бинарных систем."
+        Me.Label4.Text = "Программа для расчёта температуры и состава эвтектики в многокомпонентной системе" &
+    " и температуры и состава эвтектик, входящих в неё бинарных систем."
         '
         'Label5
         '

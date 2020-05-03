@@ -22,6 +22,12 @@ Partial Class Eutektika123
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eutektika123))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ФайлToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -101,11 +107,95 @@ Partial Class Eutektika123
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.bg_chart = New System.Windows.Forms.CheckBox()
+        Me.titles_chart = New System.Windows.Forms.CheckBox()
+        Me.bw_chart = New System.Windows.Forms.CheckBox()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.save_diagram12 = New System.Windows.Forms.Button()
+        Me.calc12 = New System.Windows.Forms.Button()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.result12_temp = New System.Windows.Forms.TextBox()
+        Me.result12_2 = New System.Windows.Forms.TextBox()
+        Me.result12_1 = New System.Windows.Forms.TextBox()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.atoms12_2 = New System.Windows.Forms.TextBox()
+        Me.temp12_2 = New System.Windows.Forms.TextBox()
+        Me.name12_2 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.atoms12_1 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.temp12_1 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.name12_1 = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.resultName4 = New System.Windows.Forms.Label()
+        Me.result4_4 = New System.Windows.Forms.TextBox()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.resultName3 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.resultName2 = New System.Windows.Forms.Label()
+        Me.resultName1 = New System.Windows.Forms.Label()
+        Me.result4_temp = New System.Windows.Forms.TextBox()
+        Me.result4_3 = New System.Windows.Forms.TextBox()
+        Me.result4_2 = New System.Windows.Forms.TextBox()
+        Me.result4_1 = New System.Windows.Forms.TextBox()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.result1234 = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.atoms4_4 = New System.Windows.Forms.TextBox()
+        Me.temp4_4 = New System.Windows.Forms.TextBox()
+        Me.startName4 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.atoms4_3 = New System.Windows.Forms.TextBox()
+        Me.temp4_3 = New System.Windows.Forms.TextBox()
+        Me.startName3 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.atoms4_2 = New System.Windows.Forms.TextBox()
+        Me.temp4_2 = New System.Windows.Forms.TextBox()
+        Me.startName2 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.atoms4_1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.temp4_1 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.startName1 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -113,7 +203,7 @@ Partial Class Eutektika123
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ФайлToolStripMenuItem, Me.ОПрограммеToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(803, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(822, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -129,7 +219,7 @@ Partial Class Eutektika123
         Me.НовыйФайлToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources._new
         Me.НовыйФайлToolStripMenuItem.Name = "НовыйФайлToolStripMenuItem"
         Me.НовыйФайлToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.НовыйФайлToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.НовыйФайлToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.НовыйФайлToolStripMenuItem.Text = "Новый файл"
         '
         'ЗагрузитьДанныеToolStripMenuItem
@@ -137,7 +227,7 @@ Partial Class Eutektika123
         Me.ЗагрузитьДанныеToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.folder
         Me.ЗагрузитьДанныеToolStripMenuItem.Name = "ЗагрузитьДанныеToolStripMenuItem"
         Me.ЗагрузитьДанныеToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.ЗагрузитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.ЗагрузитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.ЗагрузитьДанныеToolStripMenuItem.Text = "Загрузить данные..."
         '
         'СохранитьДанныеToolStripMenuItem
@@ -145,7 +235,7 @@ Partial Class Eutektika123
         Me.СохранитьДанныеToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.save
         Me.СохранитьДанныеToolStripMenuItem.Name = "СохранитьДанныеToolStripMenuItem"
         Me.СохранитьДанныеToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.СохранитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.СохранитьДанныеToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.СохранитьДанныеToolStripMenuItem.Text = "Сохранить данные..."
         '
         'ВыходИзПрограммыToolStripMenuItem
@@ -153,7 +243,7 @@ Partial Class Eutektika123
         Me.ВыходИзПрограммыToolStripMenuItem.Image = Global.Eutektika.My.Resources.Resources.close
         Me.ВыходИзПрограммыToolStripMenuItem.Name = "ВыходИзПрограммыToolStripMenuItem"
         Me.ВыходИзПрограммыToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Q), System.Windows.Forms.Keys)
-        Me.ВыходИзПрограммыToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.ВыходИзПрограммыToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.ВыходИзПрограммыToolStripMenuItem.Text = "Выход из программы"
         '
         'ОПрограммеToolStripMenuItem
@@ -198,7 +288,7 @@ Partial Class Eutektika123
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.name1)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 27)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(399, 134)
         Me.GroupBox1.TabIndex = 3
@@ -332,7 +422,7 @@ Partial Class Eutektika123
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(623, 390)
+        Me.Button1.Location = New System.Drawing.Point(617, 369)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(168, 31)
         Me.Button1.TabIndex = 5
@@ -384,7 +474,7 @@ Partial Class Eutektika123
         Me.GroupBox2.Controls.Add(Me.name123_answer)
         Me.GroupBox2.Controls.Add(Me.name3_answer)
         Me.GroupBox2.Controls.Add(Me.name2_answer)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 167)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 146)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(399, 254)
         Me.GroupBox2.TabIndex = 6
@@ -779,7 +869,7 @@ Partial Class Eutektika123
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(426, 390)
+        Me.Button2.Location = New System.Drawing.Point(420, 369)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(191, 31)
         Me.Button2.TabIndex = 7
@@ -816,7 +906,7 @@ Partial Class Eutektika123
         Me.GroupBox3.Controls.Add(Me.CheckBox3)
         Me.GroupBox3.Controls.Add(Me.CheckBox1)
         Me.GroupBox3.Controls.Add(Me.CheckBox2)
-        Me.GroupBox3.Location = New System.Drawing.Point(426, 334)
+        Me.GroupBox3.Location = New System.Drawing.Point(420, 313)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(365, 50)
         Me.GroupBox3.TabIndex = 10
@@ -853,32 +943,864 @@ Partial Class Eutektika123
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(426, 33)
+        Me.PictureBox1.Location = New System.Drawing.Point(420, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(365, 292)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 36)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(801, 431)
+        Me.TabControl1.TabIndex = 11
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox8)
+        Me.TabPage3.Controls.Add(Me.Chart1)
+        Me.TabPage3.Controls.Add(Me.save_diagram12)
+        Me.TabPage3.Controls.Add(Me.calc12)
+        Me.TabPage3.Controls.Add(Me.GroupBox7)
+        Me.TabPage3.Controls.Add(Me.GroupBox5)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(793, 405)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Двухкомпонентная система"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.bg_chart)
+        Me.GroupBox8.Controls.Add(Me.titles_chart)
+        Me.GroupBox8.Controls.Add(Me.bw_chart)
+        Me.GroupBox8.Location = New System.Drawing.Point(6, 264)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(399, 100)
+        Me.GroupBox8.TabIndex = 14
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Настройки графика"
+        '
+        'bg_chart
+        '
+        Me.bg_chart.AutoSize = True
+        Me.bg_chart.Location = New System.Drawing.Point(12, 71)
+        Me.bg_chart.Name = "bg_chart"
+        Me.bg_chart.Size = New System.Drawing.Size(163, 17)
+        Me.bg_chart.TabIndex = 2
+        Me.bg_chart.Text = "Скрыть фоновую разметку"
+        Me.bg_chart.UseVisualStyleBackColor = True
+        '
+        'titles_chart
+        '
+        Me.titles_chart.AutoSize = True
+        Me.titles_chart.Location = New System.Drawing.Point(12, 48)
+        Me.titles_chart.Name = "titles_chart"
+        Me.titles_chart.Size = New System.Drawing.Size(136, 17)
+        Me.titles_chart.TabIndex = 1
+        Me.titles_chart.Text = "Скрыть подписи осей"
+        Me.titles_chart.UseVisualStyleBackColor = True
+        '
+        'bw_chart
+        '
+        Me.bw_chart.AutoSize = True
+        Me.bw_chart.Location = New System.Drawing.Point(12, 25)
+        Me.bw_chart.Name = "bw_chart"
+        Me.bw_chart.Size = New System.Drawing.Size(130, 17)
+        Me.bw_chart.TabIndex = 0
+        Me.bw_chart.Text = "Черно-белый режим"
+        Me.bw_chart.UseVisualStyleBackColor = True
+        '
+        'Chart1
+        '
+        Me.Chart1.BorderlineColor = System.Drawing.Color.Gainsboro
+        Me.Chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea1.AxisX.Interval = 10.0R
+        ChartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.LabelAutoFitMaxFontSize = 8
+        ChartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisX.Maximum = 100.0R
+        ChartArea1.AxisX.Minimum = 0R
+        ChartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisX.Title = "Состав, мол.%"
+        ChartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea1.AxisY.Interval = 250.0R
+        ChartArea1.AxisY.LabelAutoFitMaxFontSize = 8
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisY.Maximum = 3500.0R
+        ChartArea1.AxisY.Minimum = 0R
+        ChartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisY.Title = "Т, К"
+        ChartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea1.AxisY2.Interval = 250.0R
+        ChartArea1.AxisY2.LabelAutoFitMaxFontSize = 8
+        ChartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisY2.Maximum = 3500.0R
+        ChartArea1.AxisY2.Minimum = 0R
+        ChartArea1.AxisY2.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea1.AxisY2.Title = "T, K"
+        ChartArea1.BorderColor = System.Drawing.Color.Gainsboro
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.Chart1.Location = New System.Drawing.Point(411, 12)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Series1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
+        Series1.Color = System.Drawing.Color.LavenderBlush
+        Series1.Name = "Series5"
+        Series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area
+        Series2.Color = System.Drawing.Color.Azure
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series3"
+        Series2.ToolTip = "Твердый раствор"
+        Series3.BorderWidth = 2
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series3.Color = System.Drawing.Color.DodgerBlue
+        Series3.LabelBorderWidth = 2
+        Series3.Legend = "Legend1"
+        Series3.MarkerColor = System.Drawing.Color.RoyalBlue
+        Series3.MarkerSize = 3
+        Series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+        Series3.Name = "Series1"
+        Series4.BorderWidth = 2
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series4.Color = System.Drawing.Color.Tomato
+        Series4.LabelBorderWidth = 2
+        Series4.Legend = "Legend1"
+        Series4.MarkerColor = System.Drawing.Color.IndianRed
+        Series4.MarkerSize = 3
+        Series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+        Series4.Name = "Series2"
+        Series5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
+        Series5.ChartArea = "ChartArea1"
+        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series5.Color = System.Drawing.Color.Green
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series4"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Series.Add(Series3)
+        Me.Chart1.Series.Add(Series4)
+        Me.Chart1.Series.Add(Series5)
+        Me.Chart1.Size = New System.Drawing.Size(370, 390)
+        Me.Chart1.TabIndex = 13
+        Me.Chart1.Text = "Chart1"
+        '
+        'save_diagram12
+        '
+        Me.save_diagram12.Location = New System.Drawing.Point(6, 371)
+        Me.save_diagram12.Name = "save_diagram12"
+        Me.save_diagram12.Size = New System.Drawing.Size(191, 31)
+        Me.save_diagram12.TabIndex = 12
+        Me.save_diagram12.Text = "Сохранить график..."
+        Me.save_diagram12.UseVisualStyleBackColor = True
+        '
+        'calc12
+        '
+        Me.calc12.Location = New System.Drawing.Point(203, 371)
+        Me.calc12.Name = "calc12"
+        Me.calc12.Size = New System.Drawing.Size(202, 31)
+        Me.calc12.TabIndex = 11
+        Me.calc12.Text = "Рассчитать"
+        Me.calc12.UseVisualStyleBackColor = True
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.Panel2)
+        Me.GroupBox7.Controls.Add(Me.Panel1)
+        Me.GroupBox7.Controls.Add(Me.Label20)
+        Me.GroupBox7.Controls.Add(Me.Label35)
+        Me.GroupBox7.Controls.Add(Me.Label36)
+        Me.GroupBox7.Controls.Add(Me.Label38)
+        Me.GroupBox7.Controls.Add(Me.Label39)
+        Me.GroupBox7.Controls.Add(Me.Label40)
+        Me.GroupBox7.Controls.Add(Me.result12_temp)
+        Me.GroupBox7.Controls.Add(Me.result12_2)
+        Me.GroupBox7.Controls.Add(Me.result12_1)
+        Me.GroupBox7.Controls.Add(Me.Label41)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 115)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(399, 143)
+        Me.GroupBox7.TabIndex = 10
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Расчет четверной системы"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Tomato
+        Me.Panel2.Location = New System.Drawing.Point(218, 83)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(23, 20)
+        Me.Panel2.TabIndex = 57
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Panel1.Location = New System.Drawing.Point(218, 57)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(23, 20)
+        Me.Panel1.TabIndex = 56
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(171, 112)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(14, 13)
+        Me.Label20.TabIndex = 55
+        Me.Label20.Text = "К"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(171, 86)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(41, 13)
+        Me.Label35.TabIndex = 53
+        Me.Label35.Text = "мол. %"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(171, 60)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(41, 13)
+        Me.Label36.TabIndex = 52
+        Me.Label36.Text = "мол. %"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(11, 111)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(26, 13)
+        Me.Label38.TabIndex = 50
+        Me.Label38.Text = "Te2"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(11, 85)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(20, 13)
+        Me.Label39.TabIndex = 49
+        Me.Label39.Text = "X()"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(11, 59)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(20, 13)
+        Me.Label40.TabIndex = 48
+        Me.Label40.Text = "X()"
+        '
+        'result12_temp
+        '
+        Me.result12_temp.Location = New System.Drawing.Point(107, 109)
+        Me.result12_temp.Name = "result12_temp"
+        Me.result12_temp.ReadOnly = True
+        Me.result12_temp.Size = New System.Drawing.Size(58, 20)
+        Me.result12_temp.TabIndex = 47
+        '
+        'result12_2
+        '
+        Me.result12_2.Location = New System.Drawing.Point(107, 83)
+        Me.result12_2.Name = "result12_2"
+        Me.result12_2.ReadOnly = True
+        Me.result12_2.Size = New System.Drawing.Size(58, 20)
+        Me.result12_2.TabIndex = 45
+        '
+        'result12_1
+        '
+        Me.result12_1.Location = New System.Drawing.Point(107, 57)
+        Me.result12_1.Name = "result12_1"
+        Me.result12_1.ReadOnly = True
+        Me.result12_1.Size = New System.Drawing.Size(58, 20)
+        Me.result12_1.TabIndex = 44
+        '
+        'Label41
+        '
+        Me.Label41.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label41.Location = New System.Drawing.Point(11, 22)
+        Me.Label41.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Padding = New System.Windows.Forms.Padding(2)
+        Me.Label41.Size = New System.Drawing.Size(374, 18)
+        Me.Label41.TabIndex = 43
+        Me.Label41.Text = "X12"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label14)
+        Me.GroupBox5.Controls.Add(Me.atoms12_2)
+        Me.GroupBox5.Controls.Add(Me.temp12_2)
+        Me.GroupBox5.Controls.Add(Me.name12_2)
+        Me.GroupBox5.Controls.Add(Me.Label15)
+        Me.GroupBox5.Controls.Add(Me.atoms12_1)
+        Me.GroupBox5.Controls.Add(Me.Label16)
+        Me.GroupBox5.Controls.Add(Me.temp12_1)
+        Me.GroupBox5.Controls.Add(Me.Label17)
+        Me.GroupBox5.Controls.Add(Me.name12_1)
+        Me.GroupBox5.Controls.Add(Me.Label18)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(399, 103)
+        Me.GroupBox5.TabIndex = 4
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Данные соединений"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(9, 74)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(16, 13)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "2:"
+        '
+        'atoms12_2
+        '
+        Me.atoms12_2.Location = New System.Drawing.Point(306, 71)
+        Me.atoms12_2.MaxLength = 5
+        Me.atoms12_2.Name = "atoms12_2"
+        Me.atoms12_2.Size = New System.Drawing.Size(79, 20)
+        Me.atoms12_2.TabIndex = 12
+        Me.atoms12_2.Text = "2"
+        Me.atoms12_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'temp12_2
+        '
+        Me.temp12_2.Location = New System.Drawing.Point(184, 71)
+        Me.temp12_2.MaxLength = 5
+        Me.temp12_2.Name = "temp12_2"
+        Me.temp12_2.Size = New System.Drawing.Size(102, 20)
+        Me.temp12_2.TabIndex = 10
+        Me.temp12_2.Text = "3000"
+        Me.temp12_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'name12_2
+        '
+        Me.name12_2.Location = New System.Drawing.Point(31, 71)
+        Me.name12_2.MaxLength = 15
+        Me.name12_2.Name = "name12_2"
+        Me.name12_2.Size = New System.Drawing.Size(134, 20)
+        Me.name12_2.TabIndex = 8
+        Me.name12_2.Text = "B"
+        Me.name12_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(9, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(16, 13)
+        Me.Label15.TabIndex = 7
+        Me.Label15.Text = "1:"
+        '
+        'atoms12_1
+        '
+        Me.atoms12_1.Location = New System.Drawing.Point(306, 45)
+        Me.atoms12_1.MaxLength = 5
+        Me.atoms12_1.Name = "atoms12_1"
+        Me.atoms12_1.Size = New System.Drawing.Size(79, 20)
+        Me.atoms12_1.TabIndex = 5
+        Me.atoms12_1.Text = "2"
+        Me.atoms12_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(306, 27)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(79, 13)
+        Me.Label16.TabIndex = 6
+        Me.Label16.Text = "Число атомов"
+        '
+        'temp12_1
+        '
+        Me.temp12_1.Location = New System.Drawing.Point(184, 45)
+        Me.temp12_1.MaxLength = 5
+        Me.temp12_1.Name = "temp12_1"
+        Me.temp12_1.Size = New System.Drawing.Size(102, 20)
+        Me.temp12_1.TabIndex = 3
+        Me.temp12_1.Text = "2000"
+        Me.temp12_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(181, 27)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(105, 13)
+        Me.Label17.TabIndex = 4
+        Me.Label17.Text = "Тпл. соединения, К"
+        '
+        'name12_1
+        '
+        Me.name12_1.Location = New System.Drawing.Point(31, 45)
+        Me.name12_1.MaxLength = 15
+        Me.name12_1.Name = "name12_1"
+        Me.name12_1.Size = New System.Drawing.Size(134, 20)
+        Me.name12_1.TabIndex = 1
+        Me.name12_1.Text = "A"
+        Me.name12_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(31, 27)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(118, 13)
+        Me.Label18.TabIndex = 2
+        Me.Label18.Text = "Формула соединения"
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.PictureBox1)
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(793, 405)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Трёхкомпонентная система"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.GroupBox6)
+        Me.TabPage2.Controls.Add(Me.result1234)
+        Me.TabPage2.Controls.Add(Me.GroupBox4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(793, 405)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Четырёхкомпонентная система"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Label64)
+        Me.GroupBox6.Controls.Add(Me.resultName4)
+        Me.GroupBox6.Controls.Add(Me.result4_4)
+        Me.GroupBox6.Controls.Add(Me.Label42)
+        Me.GroupBox6.Controls.Add(Me.Label43)
+        Me.GroupBox6.Controls.Add(Me.Label57)
+        Me.GroupBox6.Controls.Add(Me.Label58)
+        Me.GroupBox6.Controls.Add(Me.resultName3)
+        Me.GroupBox6.Controls.Add(Me.Label60)
+        Me.GroupBox6.Controls.Add(Me.resultName2)
+        Me.GroupBox6.Controls.Add(Me.resultName1)
+        Me.GroupBox6.Controls.Add(Me.result4_temp)
+        Me.GroupBox6.Controls.Add(Me.result4_3)
+        Me.GroupBox6.Controls.Add(Me.result4_2)
+        Me.GroupBox6.Controls.Add(Me.result4_1)
+        Me.GroupBox6.Controls.Add(Me.Label63)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 166)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(399, 196)
+        Me.GroupBox6.TabIndex = 9
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Расчет четверной системы"
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Location = New System.Drawing.Point(171, 140)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(41, 13)
+        Me.Label64.TabIndex = 58
+        Me.Label64.Text = "мол. %"
+        '
+        'resultName4
+        '
+        Me.resultName4.AutoSize = True
+        Me.resultName4.Location = New System.Drawing.Point(11, 137)
+        Me.resultName4.Name = "resultName4"
+        Me.resultName4.Size = New System.Drawing.Size(20, 13)
+        Me.resultName4.TabIndex = 57
+        Me.resultName4.Text = "X()"
+        '
+        'result4_4
+        '
+        Me.result4_4.Location = New System.Drawing.Point(107, 137)
+        Me.result4_4.Name = "result4_4"
+        Me.result4_4.ReadOnly = True
+        Me.result4_4.Size = New System.Drawing.Size(58, 20)
+        Me.result4_4.TabIndex = 56
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(171, 167)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(14, 13)
+        Me.Label42.TabIndex = 55
+        Me.Label42.Text = "К"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(171, 114)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(41, 13)
+        Me.Label43.TabIndex = 54
+        Me.Label43.Text = "мол. %"
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Location = New System.Drawing.Point(171, 88)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(41, 13)
+        Me.Label57.TabIndex = 53
+        Me.Label57.Text = "мол. %"
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Location = New System.Drawing.Point(171, 62)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(41, 13)
+        Me.Label58.TabIndex = 52
+        Me.Label58.Text = "мол. %"
+        '
+        'resultName3
+        '
+        Me.resultName3.AutoSize = True
+        Me.resultName3.Location = New System.Drawing.Point(11, 111)
+        Me.resultName3.Name = "resultName3"
+        Me.resultName3.Size = New System.Drawing.Size(20, 13)
+        Me.resultName3.TabIndex = 51
+        Me.resultName3.Text = "X()"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Location = New System.Drawing.Point(11, 164)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(26, 13)
+        Me.Label60.TabIndex = 50
+        Me.Label60.Text = "Te4"
+        '
+        'resultName2
+        '
+        Me.resultName2.AutoSize = True
+        Me.resultName2.Location = New System.Drawing.Point(11, 85)
+        Me.resultName2.Name = "resultName2"
+        Me.resultName2.Size = New System.Drawing.Size(20, 13)
+        Me.resultName2.TabIndex = 49
+        Me.resultName2.Text = "X()"
+        '
+        'resultName1
+        '
+        Me.resultName1.AutoSize = True
+        Me.resultName1.Location = New System.Drawing.Point(11, 59)
+        Me.resultName1.Name = "resultName1"
+        Me.resultName1.Size = New System.Drawing.Size(20, 13)
+        Me.resultName1.TabIndex = 48
+        Me.resultName1.Text = "X()"
+        '
+        'result4_temp
+        '
+        Me.result4_temp.Location = New System.Drawing.Point(107, 164)
+        Me.result4_temp.Name = "result4_temp"
+        Me.result4_temp.ReadOnly = True
+        Me.result4_temp.Size = New System.Drawing.Size(58, 20)
+        Me.result4_temp.TabIndex = 47
+        '
+        'result4_3
+        '
+        Me.result4_3.Location = New System.Drawing.Point(107, 111)
+        Me.result4_3.Name = "result4_3"
+        Me.result4_3.ReadOnly = True
+        Me.result4_3.Size = New System.Drawing.Size(58, 20)
+        Me.result4_3.TabIndex = 46
+        '
+        'result4_2
+        '
+        Me.result4_2.Location = New System.Drawing.Point(107, 85)
+        Me.result4_2.Name = "result4_2"
+        Me.result4_2.ReadOnly = True
+        Me.result4_2.Size = New System.Drawing.Size(58, 20)
+        Me.result4_2.TabIndex = 45
+        '
+        'result4_1
+        '
+        Me.result4_1.Location = New System.Drawing.Point(107, 59)
+        Me.result4_1.Name = "result4_1"
+        Me.result4_1.ReadOnly = True
+        Me.result4_1.Size = New System.Drawing.Size(58, 20)
+        Me.result4_1.TabIndex = 44
+        '
+        'Label63
+        '
+        Me.Label63.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label63.Location = New System.Drawing.Point(11, 22)
+        Me.Label63.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Padding = New System.Windows.Forms.Padding(2)
+        Me.Label63.Size = New System.Drawing.Size(352, 18)
+        Me.Label63.TabIndex = 43
+        Me.Label63.Text = "X1234"
+        '
+        'result1234
+        '
+        Me.result1234.Location = New System.Drawing.Point(6, 368)
+        Me.result1234.Name = "result1234"
+        Me.result1234.Size = New System.Drawing.Size(399, 31)
+        Me.result1234.TabIndex = 8
+        Me.result1234.Text = "Рассчитать"
+        Me.result1234.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Label56)
+        Me.GroupBox4.Controls.Add(Me.atoms4_4)
+        Me.GroupBox4.Controls.Add(Me.temp4_4)
+        Me.GroupBox4.Controls.Add(Me.startName4)
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.atoms4_3)
+        Me.GroupBox4.Controls.Add(Me.temp4_3)
+        Me.GroupBox4.Controls.Add(Me.startName3)
+        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.atoms4_2)
+        Me.GroupBox4.Controls.Add(Me.temp4_2)
+        Me.GroupBox4.Controls.Add(Me.startName2)
+        Me.GroupBox4.Controls.Add(Me.Label8)
+        Me.GroupBox4.Controls.Add(Me.atoms4_1)
+        Me.GroupBox4.Controls.Add(Me.Label10)
+        Me.GroupBox4.Controls.Add(Me.temp4_1)
+        Me.GroupBox4.Controls.Add(Me.Label11)
+        Me.GroupBox4.Controls.Add(Me.startName1)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(399, 154)
+        Me.GroupBox4.TabIndex = 4
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Данные соединений"
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(9, 126)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(16, 13)
+        Me.Label56.TabIndex = 25
+        Me.Label56.Text = "4:"
+        '
+        'atoms4_4
+        '
+        Me.atoms4_4.Location = New System.Drawing.Point(306, 123)
+        Me.atoms4_4.MaxLength = 5
+        Me.atoms4_4.Name = "atoms4_4"
+        Me.atoms4_4.Size = New System.Drawing.Size(79, 20)
+        Me.atoms4_4.TabIndex = 24
+        Me.atoms4_4.Text = "10"
+        Me.atoms4_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'temp4_4
+        '
+        Me.temp4_4.Location = New System.Drawing.Point(184, 123)
+        Me.temp4_4.MaxLength = 5
+        Me.temp4_4.Name = "temp4_4"
+        Me.temp4_4.Size = New System.Drawing.Size(102, 20)
+        Me.temp4_4.TabIndex = 23
+        Me.temp4_4.Text = "1000"
+        Me.temp4_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'startName4
+        '
+        Me.startName4.Location = New System.Drawing.Point(31, 123)
+        Me.startName4.MaxLength = 15
+        Me.startName4.Name = "startName4"
+        Me.startName4.Size = New System.Drawing.Size(134, 20)
+        Me.startName4.TabIndex = 22
+        Me.startName4.Text = "D"
+        Me.startName4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(9, 100)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(16, 13)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "3:"
+        '
+        'atoms4_3
+        '
+        Me.atoms4_3.Location = New System.Drawing.Point(306, 97)
+        Me.atoms4_3.MaxLength = 5
+        Me.atoms4_3.Name = "atoms4_3"
+        Me.atoms4_3.Size = New System.Drawing.Size(79, 20)
+        Me.atoms4_3.TabIndex = 19
+        Me.atoms4_3.Text = "10"
+        Me.atoms4_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'temp4_3
+        '
+        Me.temp4_3.Location = New System.Drawing.Point(184, 97)
+        Me.temp4_3.MaxLength = 5
+        Me.temp4_3.Name = "temp4_3"
+        Me.temp4_3.Size = New System.Drawing.Size(102, 20)
+        Me.temp4_3.TabIndex = 17
+        Me.temp4_3.Text = "1000"
+        Me.temp4_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'startName3
+        '
+        Me.startName3.Location = New System.Drawing.Point(31, 97)
+        Me.startName3.MaxLength = 15
+        Me.startName3.Name = "startName3"
+        Me.startName3.Size = New System.Drawing.Size(134, 20)
+        Me.startName3.TabIndex = 15
+        Me.startName3.Text = "C"
+        Me.startName3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(9, 74)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(16, 13)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "2:"
+        '
+        'atoms4_2
+        '
+        Me.atoms4_2.Location = New System.Drawing.Point(306, 71)
+        Me.atoms4_2.MaxLength = 5
+        Me.atoms4_2.Name = "atoms4_2"
+        Me.atoms4_2.Size = New System.Drawing.Size(79, 20)
+        Me.atoms4_2.TabIndex = 12
+        Me.atoms4_2.Text = "10"
+        Me.atoms4_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'temp4_2
+        '
+        Me.temp4_2.Location = New System.Drawing.Point(184, 71)
+        Me.temp4_2.MaxLength = 5
+        Me.temp4_2.Name = "temp4_2"
+        Me.temp4_2.Size = New System.Drawing.Size(102, 20)
+        Me.temp4_2.TabIndex = 10
+        Me.temp4_2.Text = "1000"
+        Me.temp4_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'startName2
+        '
+        Me.startName2.Location = New System.Drawing.Point(31, 71)
+        Me.startName2.MaxLength = 15
+        Me.startName2.Name = "startName2"
+        Me.startName2.Size = New System.Drawing.Size(134, 20)
+        Me.startName2.TabIndex = 8
+        Me.startName2.Text = "B"
+        Me.startName2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 48)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(16, 13)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "1:"
+        '
+        'atoms4_1
+        '
+        Me.atoms4_1.Location = New System.Drawing.Point(306, 45)
+        Me.atoms4_1.MaxLength = 5
+        Me.atoms4_1.Name = "atoms4_1"
+        Me.atoms4_1.Size = New System.Drawing.Size(79, 20)
+        Me.atoms4_1.TabIndex = 5
+        Me.atoms4_1.Text = "10"
+        Me.atoms4_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(306, 27)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(79, 13)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Число атомов"
+        '
+        'temp4_1
+        '
+        Me.temp4_1.Location = New System.Drawing.Point(184, 45)
+        Me.temp4_1.MaxLength = 5
+        Me.temp4_1.Name = "temp4_1"
+        Me.temp4_1.Size = New System.Drawing.Size(102, 20)
+        Me.temp4_1.TabIndex = 3
+        Me.temp4_1.Text = "1000"
+        Me.temp4_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(181, 27)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(105, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Тпл. соединения, К"
+        '
+        'startName1
+        '
+        Me.startName1.Location = New System.Drawing.Point(31, 45)
+        Me.startName1.MaxLength = 15
+        Me.startName1.Name = "startName1"
+        Me.startName1.Size = New System.Drawing.Size(134, 20)
+        Me.startName1.TabIndex = 1
+        Me.startName1.Text = "A"
+        Me.startName1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(31, 27)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(118, 13)
+        Me.Label12.TabIndex = 2
+        Me.Label12.Text = "Формула соединения"
         '
         'Eutektika123
         '
         Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(803, 436)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(822, 475)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "Eutektika123"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Eutectic - температура и состав эвтектики в трехкомпонентных системах"
+        Me.Text = "Eutectic - температура и состав эвтектики в многокомпонентных системах"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -888,6 +1810,21 @@ Partial Class Eutektika123
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -971,4 +1908,78 @@ Partial Class Eutektika123
     Friend WithEvents НовыйФайлToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents SaveFileDialog2 As SaveFileDialog
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Label56 As Label
+    Friend WithEvents atoms4_4 As TextBox
+    Friend WithEvents temp4_4 As TextBox
+    Friend WithEvents startName4 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents atoms4_3 As TextBox
+    Friend WithEvents temp4_3 As TextBox
+    Friend WithEvents startName3 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents atoms4_2 As TextBox
+    Friend WithEvents temp4_2 As TextBox
+    Friend WithEvents startName2 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents atoms4_1 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents temp4_1 As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents startName1 As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label64 As Label
+    Friend WithEvents resultName4 As Label
+    Friend WithEvents result4_4 As TextBox
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Label43 As Label
+    Friend WithEvents Label57 As Label
+    Friend WithEvents Label58 As Label
+    Friend WithEvents resultName3 As Label
+    Friend WithEvents Label60 As Label
+    Friend WithEvents resultName2 As Label
+    Friend WithEvents resultName1 As Label
+    Friend WithEvents result4_temp As TextBox
+    Friend WithEvents result4_3 As TextBox
+    Friend WithEvents result4_2 As TextBox
+    Friend WithEvents result4_1 As TextBox
+    Friend WithEvents Label63 As Label
+    Friend WithEvents result1234 As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents atoms12_2 As TextBox
+    Friend WithEvents temp12_2 As TextBox
+    Friend WithEvents name12_2 As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents atoms12_1 As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents temp12_1 As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents name12_1 As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents save_diagram12 As Button
+    Friend WithEvents calc12 As Button
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents result12_temp As TextBox
+    Friend WithEvents result12_2 As TextBox
+    Friend WithEvents result12_1 As TextBox
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents bg_chart As CheckBox
+    Friend WithEvents titles_chart As CheckBox
+    Friend WithEvents bw_chart As CheckBox
 End Class

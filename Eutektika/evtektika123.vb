@@ -1,4 +1,5 @@
-﻿Public Class Eutektika123
+﻿Imports System.Windows.Forms.DataVisualization.Charting
+Public Class Eutektika123
 
 
     Private Function sub1010(ByVal TT1 As Integer, ByVal NN1 As Integer, ByVal TT2 As Integer, ByVal NN2 As Integer, ByRef X1 As Double, ByRef X2 As Double) As Double
@@ -332,6 +333,26 @@
         atoms1.Text = fileReader(6)
         atoms2.Text = fileReader(7)
         atoms3.Text = fileReader(8)
+
+        startName1.Text = fileReader(9)
+        startName2.Text = fileReader(10)
+        startName3.Text = fileReader(11)
+        startName4.Text = fileReader(12)
+        temp4_1.Text = fileReader(13)
+        temp4_2.Text = fileReader(14)
+        temp4_3.Text = fileReader(15)
+        temp4_4.Text = fileReader(16)
+        atoms4_1.Text = fileReader(17)
+        atoms4_2.Text = fileReader(18)
+        atoms4_3.Text = fileReader(19)
+        atoms4_4.Text = fileReader(20)
+
+        name12_1.Text = fileReader(21)
+        name12_2.Text = fileReader(22)
+        temp12_1.Text = fileReader(23)
+        temp12_2.Text = fileReader(24)
+        atoms12_1.Text = fileReader(25)
+        atoms12_2.Text = fileReader(26)
     End Sub
 
     Private Sub СохранитьДанныеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СохранитьДанныеToolStripMenuItem.Click
@@ -339,7 +360,7 @@
         saveFileDialog2.Filter = "Файл эвтектики (*.edata)|*.edata"
         If saveFileDialog2.ShowDialog = DialogResult.Cancel Then Exit Sub
         IO.File.WriteAllText(saveFileDialog2.FileName, "")
-        My.Computer.FileSystem.WriteAllText(saveFileDialog2.FileName, name1.Text + "|" + name2.Text + "|" + name3.Text + "|" + temp1.Text + "|" + temp2.Text + "|" + temp3.Text + "|" + atoms1.Text + "|" + atoms2.Text + "|" + atoms3.Text, True)
+        My.Computer.FileSystem.WriteAllText(saveFileDialog2.FileName, name1.Text + "|" + name2.Text + "|" + name3.Text + "|" + temp1.Text + "|" + temp2.Text + "|" + temp3.Text + "|" + atoms1.Text + "|" + atoms2.Text + "|" + atoms3.Text + "|" + startName1.Text + "|" + startName2.Text + "|" + startName3.Text + "|" + startName4.Text + "|" + temp4_1.Text + "|" + temp4_2.Text + "|" + temp4_3.Text + "|" + temp4_4.Text + "|" + atoms4_1.Text + "|" + atoms4_2.Text + "|" + atoms4_3.Text + "|" + atoms4_4.Text + "|" + name12_1.Text + "|" + name12_2.Text + "|" + temp12_1.Text + "|" + temp12_2.Text + "|" + atoms12_1.Text + "|" + atoms12_2.Text, True)
         MessageBox.Show("Файл успешно сохранён", "Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
@@ -349,14 +370,238 @@
                 C.Text = ""
             End If
         Next
+        For Each C As Control In Me.GroupBox4.Controls
+            If TypeOf C Is TextBox Then
+                C.Text = ""
+            End If
+        Next
+        For Each C As Control In Me.GroupBox6.Controls
+            If TypeOf C Is TextBox Then
+                C.Text = ""
+            End If
+        Next
         PictureBox1.Image = Nothing
         Button2.Enabled = False
         GroupBox2.Enabled = False
+        name1.Text = "A"
+        name2.Text = "B"
+        name3.Text = "C"
         temp1.Text = 1000
         temp2.Text = 1000
         temp3.Text = 1000
         atoms1.Text = 10
         atoms2.Text = 10
         atoms3.Text = 10
+
+        startName1.Text = "A"
+        startName2.Text = "B"
+        startName3.Text = "C"
+        startName4.Text = "D"
+        temp4_1.Text = 1000
+        temp4_2.Text = 1000
+        temp4_3.Text = 1000
+        temp4_4.Text = 1000
+        atoms4_1.Text = 10
+        atoms4_2.Text = 10
+        atoms4_3.Text = 10
+        atoms4_4.Text = 10
+        resultName1.Text = "X()"
+        resultName2.Text = "X()"
+        resultName3.Text = "X()"
+        resultName4.Text = "X()"
+
+    End Sub
+
+    Private Sub Result1234_Click(sender As Object, e As EventArgs) Handles result1234.Click
+        Dim T1, T2, T3, T4, N1, N2, N3, N4, X1, X2, X3, X4, PP, EEE, Y, TT1 As Double
+        For k As Integer = 1 To 4
+            If Not chk(Me.GroupBox4.Controls("temp4_" & k)) Then Exit Sub
+        Next
+        For k As Integer = 1 To 4
+            If Not chk(Me.GroupBox4.Controls("atoms4_" & k)) Then Exit Sub
+        Next
+        If (Not Double.TryParse(temp4_1.Text, T1)) Or
+            (Not Double.TryParse(temp4_2.Text, T2)) Or
+            (Not Double.TryParse(temp4_3.Text, T3)) Or
+            (Not Double.TryParse(temp4_4.Text, T4)) Or
+            (Not Double.TryParse(atoms4_1.Text, N1)) Or
+            (Not Double.TryParse(atoms4_2.Text, N2)) Or
+            (Not Double.TryParse(atoms4_3.Text, N3)) Or
+            (Not Double.TryParse(atoms4_4.Text, N4)) Then
+            MessageBox.Show("Введите корректные значения")
+        Else
+            X2 = 0 : PP = 1 : EEE = 0.0001
+            While True
+                PP = PP / 10
+                Do
+                    X2 = X2 + PP
+                    X3 = Math.Exp(N3 * (1 - T3 * (1 - Math.Log(X2) / N2) / T2))
+                    X1 = Math.Exp(N1 * (1 - T1 * (1 - Math.Log(X2) / N2) / T2))
+                    X4 = Math.Exp(N4 * (1 - T4 * (1 - Math.Log(X2) / N2) / T2))
+                    Y = X1 + X2 + X3 + X4 - 1
+                    If Math.Abs(Y) < EEE Then Exit While
+                Loop While Y < 0
+                X2 = X2 - PP
+            End While
+            TT1 = T1 / (1 - Math.Log(X1) / N1)
+            result4_1.Text = Format((X1 * 100), "N2")
+            result4_2.Text = Format((X2 * 100), "N2")
+            result4_3.Text = Format((X3 * 100), "N2")
+            result4_4.Text = Format((X4 * 100), "N2")
+            result4_temp.Text = Format((TT1), "N2")
+
+            resultName1.Text = "X(" + startName1.Text + ")"
+            resultName2.Text = "X(" + startName2.Text + ")"
+            resultName3.Text = "X(" + startName3.Text + ")"
+            resultName4.Text = "X(" + startName4.Text + ")"
+        End If
+    End Sub
+
+    'Расчет двухкомпонентной системы
+    Private Sub calc12_Click(sender As Object, e As EventArgs) Handles calc12.Click
+
+        'Очищаем график от старых записей
+        For i As Integer = 1 To Chart1.Series.Count
+            Chart1.Series("Series" & i).Points.Clear()
+        Next
+
+        'Задаем начальные данные
+        Dim T1, T2, N1, N2, T0, P, X, TI1, TI2, TI15, TI25, TEVT, XEVT, XEVT2 As Double
+        T1 = Me.temp12_1.Text
+        T2 = Me.temp12_2.Text
+        N1 = Me.atoms12_1.Text
+        N2 = Me.atoms12_2.Text
+        T0 = 1 : X = 1 : P = 1 : P /= 10
+
+        'Считаем Тэвт. для двухкомпонентной системы
+        Do While True
+            X -= P
+            TI1 = T1 / (1 - Math.Log(X) / N1)
+            TI2 = T2 / (1 - Math.Log(1 - X) / N2)
+            If (Math.Abs(TI1 - TI2)) < T0 Then Exit Do
+            If (TI1 - TI2) <= 0 Then
+                X += P : P /= 10
+            End If
+        Loop
+
+        'Рисуем график
+        Chart1.Series("Series2").Points.AddXY(0, T2)        'Ставим стартовую точку для синей линии
+
+        For i As Integer = 10 To 90 Step 10
+            TI15 = T1 / (1 - Math.Log(i / 100) / N1)        'Температура первой линии
+            TI25 = T2 / (1 - Math.Log(1 - i / 100) / N2)    'Температура второй линии
+            Chart1.Series("Series1").Points.AddXY(i, TI15)  'Оранжевая линия
+            Chart1.Series("Series2").Points.AddXY(i, TI25)  'Синия линия
+        Next
+
+        Chart1.Series("Series1").Points.AddXY(100, T1)      'Ставим стартовую точку для оранжевой линии
+
+        'Причесываем ответ
+        TEVT = TI1 : XEVT = X * 100 : XEVT2 = 100 - XEVT
+
+        'Проводим линию солидуса
+        Chart1.Series("Series3").Points.AddXY(0, TEVT)
+        Chart1.Series("Series3").Points.AddXY(100, TEVT)
+
+        'Закрашиваем область расплава 
+        Chart1.Series("Series5").Points.AddXY(0, 3500)
+        Chart1.Series("Series5").Points.AddXY(100, 3500)
+        Chart1.Series("Series5").Points.AddXY(100, TEVT)
+        Chart1.Series("Series5").Points.AddXY(0, TEVT)
+
+        'Закрашиваем область солидуса
+        Chart1.Series("Series4").Points.AddXY(XEVT, 0)
+        Chart1.Series("Series4").Points.AddXY(XEVT, TEVT)
+
+        'Выводим ответ
+        Me.result12_temp.Text = Format(TEVT, "N2")
+        Me.result12_1.Text = XEVT
+        Me.result12_2.Text = XEVT2
+
+        'Цвета линий, маркеров и фона по умолчанию
+        Chart1.Series("Series1").Color = Color.DodgerBlue
+        Chart1.Series("Series1").MarkerColor = Color.RoyalBlue
+        Chart1.Series("Series2").Color = Color.Tomato
+        Chart1.Series("Series2").MarkerColor = Color.IndianRed
+        Chart1.Series("Series3").ChartType = SeriesChartType.Area
+        Chart1.Series("Series3").Color = Color.Azure
+        Chart1.Series("Series5").ChartType = SeriesChartType.Area
+        Chart1.Series("Series5").Color = Color.LavenderBlush
+        Chart1.Series("Series4").Color = Color.Green
+
+        'Подписи осей по умолчанию
+        Chart1.ChartAreas("ChartArea1").AxisX.Title = "Состав, мол.%"
+        Chart1.ChartAreas("ChartArea1").AxisY.Title = "T, K"
+        Chart1.ChartAreas("ChartArea1").AxisY2.Title = "T, K"
+
+        'Перевод в черно-белый режим
+        If bw_chart.Checked Then
+            For i As Integer = 1 To Chart1.Series.Count
+                Chart1.Series("Series" & i).Color = Color.Black
+                Chart1.Series("Series" & i).MarkerColor = Color.Black
+                Chart1.Series("Series3").ChartType = SeriesChartType.Spline
+                Chart1.Series("Series5").Color = Color.Transparent
+            Next
+        End If
+
+        'Управление подписями осей
+        If titles_chart.Checked Then
+            Chart1.ChartAreas("ChartArea1").AxisX.Title = ""
+            Chart1.ChartAreas("ChartArea1").AxisY.Title = ""
+            Chart1.ChartAreas("ChartArea1").AxisY2.Title = ""
+        End If
+
+        'Управление фоном графика
+        If bg_chart.Checked Then
+            Chart1.Series("Series3").Color = Color.Transparent
+            Chart1.Series("Series5").Color = Color.Transparent
+        End If
+
+    End Sub
+
+    'Выводим название соединений сразу в ответ
+    Private Sub name12_1_TextChanged(sender As Object, e As EventArgs) Handles name12_1.TextChanged
+        Me.Label40.Text = "X(" + Me.name12_1.Text + ")"
+    End Sub
+    Private Sub name12_2_TextChanged(sender As Object, e As EventArgs) Handles name12_2.TextChanged
+        Me.Label39.Text = "X(" + Me.name12_2.Text + ")"
+    End Sub
+
+    Private Sub save_diagram12_Click(sender As Object, e As EventArgs) Handles save_diagram12.Click
+        'Даем возможность сохранять график
+        Dim saveFileDialog1 As New SaveFileDialog()
+
+        saveFileDialog1.Filter = "Bitmap (*.bmp)|*.bmp|JPEG (*.jpg)|*.jpg|EMF (*.emf)|*.emf|PNG (*.png)|*.png|GIF (*.gif)|*.gif|TIFF (*.tif)|*.tif"
+        saveFileDialog1.FilterIndex = 2
+        saveFileDialog1.RestoreDirectory = True
+
+        If saveFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim format As ChartImageFormat = ChartImageFormat.Bmp
+            MessageBox.Show("Файл успешно сохранён", "Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If saveFileDialog1.FileName.EndsWith("bmp") Then
+                format = ChartImageFormat.Bmp
+            Else
+                If saveFileDialog1.FileName.EndsWith("jpg") Then
+                    format = ChartImageFormat.Jpeg
+                Else
+                    If saveFileDialog1.FileName.EndsWith("emf") Then
+                        format = ChartImageFormat.Emf
+                    Else
+                        If saveFileDialog1.FileName.EndsWith("gif") Then
+                            format = ChartImageFormat.Gif
+                        Else
+                            If saveFileDialog1.FileName.EndsWith("png") Then
+                                format = ChartImageFormat.Png
+                            Else
+                                If saveFileDialog1.FileName.EndsWith("tif") Then
+                                    format = ChartImageFormat.Tiff
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+            Chart1.SaveImage(saveFileDialog1.FileName, format)
+        End If
     End Sub
 End Class
