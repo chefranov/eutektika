@@ -32,15 +32,17 @@ Public Class Eutektika123
             T.Clear() : T.Focus() : T.BackColor = Color.Bisque
             Return False
         End If
+        If T.Name.StartsWith("temp") And s <= 273 Then
+            MessageBox.Show("Значение температуры меньше 273.15К, что в цельсиях является отрицательной", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            T.Clear() : T.Focus() : T.BackColor = Color.Bisque
+            Return False
+        End If
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         For k As Integer = 1 To 3
             If Not chk(Me.GroupBox1.Controls("temp" & k)) Then Exit Sub
-        Next
-
-        For k As Integer = 1 To 3
             If Not chk(Me.GroupBox1.Controls("atoms" & k)) Then Exit Sub
         Next
 
@@ -309,7 +311,6 @@ Public Class Eutektika123
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         Dim saveFileDialog1 As New SaveFileDialog()
         saveFileDialog1.Filter = "PNG|*.png|JPG|*.jpg|GIF|*.gif"
         If saveFileDialog1.ShowDialog = DialogResult.Cancel Then Exit Sub
@@ -410,55 +411,69 @@ Public Class Eutektika123
         resultName3.Text = "X()"
         resultName4.Text = "X()"
 
+        Me.name12_1.Text = "A"
+        Me.name12_2.Text = "B"
+        Me.temp12_1.Text = 2000
+        Me.temp12_2.Text = 3000
+        Me.atoms12_1.Text = 2
+        Me.atoms12_2.Text = 2
+        For i As Integer = 1 To Chart1.Series.Count
+            Chart1.Series("Series" & i).Points.Clear()
+        Next
+        Me.result12_temp.Text = ""
+        Me.result12_1.Text = ""
+        Me.result12_2.Text = ""
+
     End Sub
 
     Private Sub Result1234_Click(sender As Object, e As EventArgs) Handles result1234.Click
         Dim T1, T2, T3, T4, N1, N2, N3, N4, X1, X2, X3, X4, PP, EEE, Y, TT1 As Double
         For k As Integer = 1 To 4
             If Not chk(Me.GroupBox4.Controls("temp4_" & k)) Then Exit Sub
-        Next
-        For k As Integer = 1 To 4
             If Not chk(Me.GroupBox4.Controls("atoms4_" & k)) Then Exit Sub
         Next
-        If (Not Double.TryParse(temp4_1.Text, T1)) Or
-            (Not Double.TryParse(temp4_2.Text, T2)) Or
-            (Not Double.TryParse(temp4_3.Text, T3)) Or
-            (Not Double.TryParse(temp4_4.Text, T4)) Or
-            (Not Double.TryParse(atoms4_1.Text, N1)) Or
-            (Not Double.TryParse(atoms4_2.Text, N2)) Or
-            (Not Double.TryParse(atoms4_3.Text, N3)) Or
-            (Not Double.TryParse(atoms4_4.Text, N4)) Then
-            MessageBox.Show("Введите корректные значения")
-        Else
-            X2 = 0 : PP = 1 : EEE = 0.0001
-            While True
-                PP = PP / 10
-                Do
-                    X2 = X2 + PP
-                    X3 = Math.Exp(N3 * (1 - T3 * (1 - Math.Log(X2) / N2) / T2))
-                    X1 = Math.Exp(N1 * (1 - T1 * (1 - Math.Log(X2) / N2) / T2))
-                    X4 = Math.Exp(N4 * (1 - T4 * (1 - Math.Log(X2) / N2) / T2))
-                    Y = X1 + X2 + X3 + X4 - 1
-                    If Math.Abs(Y) < EEE Then Exit While
-                Loop While Y < 0
-                X2 = X2 - PP
-            End While
-            TT1 = T1 / (1 - Math.Log(X1) / N1)
-            result4_1.Text = Format((X1 * 100), "N2")
-            result4_2.Text = Format((X2 * 100), "N2")
-            result4_3.Text = Format((X3 * 100), "N2")
-            result4_4.Text = Format((X4 * 100), "N2")
-            result4_temp.Text = Format((TT1), "N2")
+        T1 = temp4_1.Text
+        T2 = temp4_2.Text
+        T3 = temp4_3.Text
+        T4 = temp4_4.Text
+        N1 = atoms4_1.Text
+        N2 = atoms4_2.Text
+        N3 = atoms4_3.Text
+        N4 = atoms4_4.Text
+        X2 = 0 : PP = 1 : EEE = 0.0001
+        While True
+            PP = PP / 10
+            Do
+                X2 = X2 + PP
+                X3 = Math.Exp(N3 * (1 - T3 * (1 - Math.Log(X2) / N2) / T2))
+                X1 = Math.Exp(N1 * (1 - T1 * (1 - Math.Log(X2) / N2) / T2))
+                X4 = Math.Exp(N4 * (1 - T4 * (1 - Math.Log(X2) / N2) / T2))
+                Y = X1 + X2 + X3 + X4 - 1
+                If Math.Abs(Y) < EEE Then Exit While
+            Loop While Y < 0
+            X2 = X2 - PP
+        End While
+        TT1 = T1 / (1 - Math.Log(X1) / N1)
+        result4_1.Text = Format((X1 * 100), "N2")
+        result4_2.Text = Format((X2 * 100), "N2")
+        result4_3.Text = Format((X3 * 100), "N2")
+        result4_4.Text = Format((X4 * 100), "N2")
+        result4_temp.Text = Format((TT1), "N2")
 
-            resultName1.Text = "X(" + startName1.Text + ")"
-            resultName2.Text = "X(" + startName2.Text + ")"
-            resultName3.Text = "X(" + startName3.Text + ")"
-            resultName4.Text = "X(" + startName4.Text + ")"
-        End If
+        resultName1.Text = "X(" + startName1.Text + ")"
+        resultName2.Text = "X(" + startName2.Text + ")"
+        resultName3.Text = "X(" + startName3.Text + ")"
+        resultName4.Text = "X(" + startName4.Text + ")"
     End Sub
 
     'Расчет двухкомпонентной системы
     Private Sub calc12_Click(sender As Object, e As EventArgs) Handles calc12.Click
+
+        'Проверяем поля на правильнный ввод цифр
+        For k As Integer = 1 To 2
+            If Not chk(Me.GroupBox5.Controls("temp12_" & k)) Then Exit Sub
+            If Not chk(Me.GroupBox5.Controls("atoms12_" & k)) Then Exit Sub
+        Next
 
         'Очищаем график от старых записей
         For i As Integer = 1 To Chart1.Series.Count
@@ -484,17 +499,15 @@ Public Class Eutektika123
             End If
         Loop
 
+
+
         'Рисуем график
-        Chart1.Series("Series2").Points.AddXY(0, T2)        'Ставим стартовую точку для синей линии
-
-        For i As Integer = 10 To 90 Step 10
-            TI15 = T1 / (1 - Math.Log(i / 100) / N1)        'Температура первой линии
-            TI25 = T2 / (1 - Math.Log(1 - i / 100) / N2)    'Температура второй линии
-            Chart1.Series("Series1").Points.AddXY(i, TI15)  'Оранжевая линия
-            Chart1.Series("Series2").Points.AddXY(i, TI25)  'Синия линия
+        For i As Double = 0 To 100 Step 0.1
+            TI15 = T1 / (1 - Math.Log(i / 100) / N1)                              'Температура первой линии
+            TI25 = T2 / (1 - Math.Log(1 - i / 100) / N2)                          'Температура второй линии
+            If (TI1 >= TI25) Then Chart1.Series("Series1").Points.AddXY(i, TI15)  'Оранжевая линия // Удалить условие если нужны обрезки
+            If (TI1 >= TI15) Then Chart1.Series("Series2").Points.AddXY(i, TI25)  'Синия линия // Удалить условие если нужны обрезки
         Next
-
-        Chart1.Series("Series1").Points.AddXY(100, T1)      'Ставим стартовую точку для оранжевой линии
 
         'Причесываем ответ
         TEVT = TI1 : XEVT = X * 100 : XEVT2 = 100 - XEVT
@@ -515,8 +528,8 @@ Public Class Eutektika123
 
         'Выводим ответ
         Me.result12_temp.Text = Format(TEVT, "N2")
-        Me.result12_1.Text = XEVT
-        Me.result12_2.Text = XEVT2
+        Me.result12_1.Text = Format(XEVT, "N2")
+        Me.result12_2.Text = Format(XEVT2, "N2")
 
         'Цвета линий, маркеров и фона по умолчанию
         Chart1.Series("Series1").Color = Color.DodgerBlue

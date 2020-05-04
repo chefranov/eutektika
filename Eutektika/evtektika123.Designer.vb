@@ -1065,7 +1065,6 @@ Partial Class Eutektika123
         Series2.Legend = "Legend1"
         Series2.Name = "Series3"
         Series2.ToolTip = "Твердый раствор"
-        Series3.BorderWidth = 2
         Series3.ChartArea = "ChartArea1"
         Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
         Series3.Color = System.Drawing.Color.DodgerBlue
@@ -1073,9 +1072,7 @@ Partial Class Eutektika123
         Series3.Legend = "Legend1"
         Series3.MarkerColor = System.Drawing.Color.RoyalBlue
         Series3.MarkerSize = 3
-        Series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
         Series3.Name = "Series1"
-        Series4.BorderWidth = 2
         Series4.ChartArea = "ChartArea1"
         Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
         Series4.Color = System.Drawing.Color.Tomato
@@ -1083,7 +1080,6 @@ Partial Class Eutektika123
         Series4.Legend = "Legend1"
         Series4.MarkerColor = System.Drawing.Color.IndianRed
         Series4.MarkerSize = 3
-        Series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
         Series4.Name = "Series2"
         Series5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash
         Series5.ChartArea = "ChartArea1"
@@ -1800,7 +1796,7 @@ Partial Class Eutektika123
         Me.MaximizeBox = False
         Me.Name = "Eutektika123"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Eutectic - температура и состав эвтектики в многокомпонентных системах"
+        Me.Text = "Eutektika - температура и состав эвтектики в многокомпонентных системах"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
