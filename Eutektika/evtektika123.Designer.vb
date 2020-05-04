@@ -35,6 +35,7 @@ Partial Class Eutektika123
         Me.ЗагрузитьДанныеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.СохранитьДанныеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ВыходИзПрограммыToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.appUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.ОПрограммеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.name1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -200,7 +201,7 @@ Partial Class Eutektika123
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ФайлToolStripMenuItem, Me.ОПрограммеToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ФайлToolStripMenuItem, Me.appUpdate, Me.ОПрограммеToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(822, 24)
@@ -245,6 +246,12 @@ Partial Class Eutektika123
         Me.ВыходИзПрограммыToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Q), System.Windows.Forms.Keys)
         Me.ВыходИзПрограммыToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.ВыходИзПрограммыToolStripMenuItem.Text = "Выход из программы"
+        '
+        'appUpdate
+        '
+        Me.appUpdate.Name = "appUpdate"
+        Me.appUpdate.Size = New System.Drawing.Size(88, 20)
+        Me.appUpdate.Text = "Обновление"
         '
         'ОПрограммеToolStripMenuItem
         '
@@ -1978,4 +1985,5 @@ Partial Class Eutektika123
     Friend WithEvents bg_chart As CheckBox
     Friend WithEvents titles_chart As CheckBox
     Friend WithEvents bw_chart As CheckBox
+    Friend WithEvents appUpdate As ToolStripMenuItem
 End Class

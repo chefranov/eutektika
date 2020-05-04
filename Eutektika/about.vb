@@ -11,4 +11,7 @@ Public Class about
         System.Diagnostics.Process.Start("https://chefranov.name")
     End Sub
 
+    Private Sub about_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.Text = "Eutektika " + Application.ProductVersion
+    End Sub
 End Class

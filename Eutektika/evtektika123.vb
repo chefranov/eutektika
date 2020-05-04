@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
+Imports System.Net
 Public Class Eutektika123
 
 
@@ -617,4 +618,48 @@ Public Class Eutektika123
             Chart1.SaveImage(saveFileDialog1.FileName, format)
         End If
     End Sub
+
+    Dim WithEvents WBC As New WebBrowser
+    Dim LastVersion As String
+    Private Sub appUpdate_Click(sender As Object, e As EventArgs) Handles appUpdate.Click
+        If CheckForInternetConnection() Then
+            WBC.ScriptErrorsSuppressed() = True
+            Dim url As String = "https://chefranov.name/projects/eutektika/" ' адрес страницы, где написан номер последней версии 
+            WBC.Navigate(url)
+        Else
+            MessageBox.Show("Проблемы с интернет-подключением", "Ошибка сети", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub WBC_DocumentCompleted(ByVal sender As Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WBC.DocumentCompleted
+        LastVersion = WBC.Document.GetElementById("app-version").InnerText
+        Dim version1, version2
+        version1 = New Version(Application.ProductVersion) 'Текущая версия
+        version2 = New Version(LastVersion) 'Новая версия
+        If version1 < version2 Then
+            Dim Msg, Title, Response
+            Msg = "Доступна новая версия программы - Eutektika " & LastVersion & ". Желаете обновить программу до последней версии?" 'сообщение
+            Title = "Обновление программы"
+            Response = MsgBox(Msg, vbYesNo + vbQuestion, Title)
+            If Response = vbYes Then
+                MsgBox("Сейчас в браузере откроется страница с последней версией программы. На открытой странице Вы сможете просмотреть примечания к выпуску и загрузить программу.", vbOKOnly + vbInformation, "Загрузка обновления")
+                Process.Start("https://chefranov.name/projects/eutektika/")
+            End If
+        Else
+            MsgBox("Вы используете последнию версию программы.", vbOKOnly + vbInformation, "Обновлений нет")
+        End If
+    End Sub
+
+    Public Shared Function CheckForInternetConnection() As Boolean
+        Try
+            Using client = New WebClient()
+                Using stream = client.OpenRead("https://chefranov.name/projects/eutektika/")
+                    Return True
+                End Using
+            End Using
+        Catch
+            Return False
+        End Try
+    End Function
+
 End Class
