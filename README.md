@@ -1,7 +1,7 @@
 # Eutektika #
 Eutektika - это программа которая позволяет расчитать состав и эвтектическую температуру плавления в двух-,трёх- и четырёхкомпонетных системах.
 
-![Image of Yaktocat](https://chefranov.name/wp-content/uploads/2020/04/eutektika3.1.1.png)
+![Eutektika](https://chefranov.name/wp-content/uploads/2020/04/eutektika3.1.1.png)
 
 ## Системные требования ##
 - Операционная система Windows XP и выше
