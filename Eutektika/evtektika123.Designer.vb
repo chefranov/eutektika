@@ -182,6 +182,7 @@ Partial Class Eutektika123
         Me.Label11 = New System.Windows.Forms.Label()
         Me.startName1 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.preloaderBar = New System.Windows.Forms.ProgressBar()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -1789,12 +1790,24 @@ Partial Class Eutektika123
         Me.Label12.TabIndex = 2
         Me.Label12.Text = "Формула соединения"
         '
+        'preloaderBar
+        '
+        Me.preloaderBar.Location = New System.Drawing.Point(668, 3)
+        Me.preloaderBar.MarqueeAnimationSpeed = 200
+        Me.preloaderBar.Name = "preloaderBar"
+        Me.preloaderBar.Size = New System.Drawing.Size(150, 18)
+        Me.preloaderBar.Step = 4
+        Me.preloaderBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.preloaderBar.TabIndex = 12
+        Me.preloaderBar.Visible = False
+        '
         'Eutektika123
         '
         Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(822, 475)
+        Me.Controls.Add(Me.preloaderBar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -1986,4 +1999,5 @@ Partial Class Eutektika123
     Friend WithEvents titles_chart As CheckBox
     Friend WithEvents bw_chart As CheckBox
     Friend WithEvents appUpdate As ToolStripMenuItem
+    Friend WithEvents preloaderBar As ProgressBar
 End Class

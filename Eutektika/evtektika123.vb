@@ -622,16 +622,19 @@ Public Class Eutektika123
     Dim WithEvents WBC As New WebBrowser
     Dim LastVersion As String
     Private Sub appUpdate_Click(sender As Object, e As EventArgs) Handles appUpdate.Click
+        preloaderBar.Visible = True
         If CheckForInternetConnection() Then
             WBC.ScriptErrorsSuppressed() = True
             Dim url As String = "https://chefranov.name/projects/eutektika/" ' адрес страницы, где написан номер последней версии 
             WBC.Navigate(url)
         Else
+            preloaderBar.Visible = False
             MessageBox.Show("Проблемы с интернет-подключением", "Ошибка сети", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
     Private Sub WBC_DocumentCompleted(ByVal sender As Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WBC.DocumentCompleted
+        preloaderBar.Visible = False
         LastVersion = WBC.Document.GetElementById("app-version").InnerText
         Dim version1, version2
         version1 = New Version(Application.ProductVersion) 'Текущая версия
