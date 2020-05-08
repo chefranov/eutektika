@@ -41,7 +41,7 @@ Partial Class about
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(282, 21)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Eutectic 1.3"
+        Me.Label1.Text = "Eutektika 1.3"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2

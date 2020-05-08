@@ -487,7 +487,7 @@ Partial Class Eutektika123
         Me.GroupBox2.Size = New System.Drawing.Size(399, 254)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Подробный расчёт"
+        Me.GroupBox2.Text = "Составы и температуры эвтектик"
         '
         'Label33
         '
@@ -1141,7 +1141,7 @@ Partial Class Eutektika123
         Me.GroupBox7.Size = New System.Drawing.Size(399, 143)
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Расчет четверной системы"
+        Me.GroupBox7.Text = "Состав и температура эвтектики"
         '
         'Panel2
         '
@@ -1245,7 +1245,7 @@ Partial Class Eutektika123
         Me.Label41.Margin = New System.Windows.Forms.Padding(0)
         Me.Label41.Name = "Label41"
         Me.Label41.Padding = New System.Windows.Forms.Padding(2)
-        Me.Label41.Size = New System.Drawing.Size(374, 18)
+        Me.Label41.Size = New System.Drawing.Size(378, 18)
         Me.Label41.TabIndex = 43
         Me.Label41.Text = "X12"
         '
@@ -1426,7 +1426,7 @@ Partial Class Eutektika123
         Me.GroupBox6.Size = New System.Drawing.Size(399, 196)
         Me.GroupBox6.TabIndex = 9
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Расчет четверной системы"
+        Me.GroupBox6.Text = "Состав и температура эвтектики"
         '
         'Label64
         '
@@ -1566,7 +1566,7 @@ Partial Class Eutektika123
         Me.Label63.Margin = New System.Windows.Forms.Padding(0)
         Me.Label63.Name = "Label63"
         Me.Label63.Padding = New System.Windows.Forms.Padding(2)
-        Me.Label63.Size = New System.Drawing.Size(352, 18)
+        Me.Label63.Size = New System.Drawing.Size(378, 18)
         Me.Label63.TabIndex = 43
         Me.Label63.Text = "X1234"
         '

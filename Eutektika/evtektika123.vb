@@ -649,7 +649,7 @@ Public Class Eutektika123
                 Process.Start("https://chefranov.name/projects/eutektika/")
             End If
         Else
-            MsgBox("Вы используете последнию версию программы.", vbOKOnly + vbInformation, "Обновлений нет")
+            MsgBox("Вы используете последнюю версию программы.", vbOKOnly + vbInformation, "Обновлений нет")
         End If
     End Sub
 
